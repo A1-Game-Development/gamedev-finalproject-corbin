@@ -26,10 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public bool speedPanel; //public for the sake of debugging.
     public bool SpeedPanelMomentumDEBUG; //Used for experimental momentum. Leave as false on startup to avoid problems.
 
-    public float KBForce;
-    public float KBCounter;
-    public float KBTotalTime;
-    public bool KnockFromRight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -49,27 +45,6 @@ public class PlayerMovement : MonoBehaviour
 
     //The if statement below, disables its self when speedpanel or waterdetect is true, this was done to prevent "unpredictable behavior".
     void MoveWithInput() {
-
-        if(KBCounter <= 0)
-        {
-                xInput = Input.GetAxis("Horizontal");
-                yInput = Input.GetAxis("Vertical");        
-        }
-        else
-        {
-            if(KnockFromRight == true)
-            {
-                new Vector2(-KBForce, KBForce);
-            }
-            if(KnockFromRight == false)
-            {
-                new Vector2(KBForce, KBForce);
-            }
-
-            KBCounter -= Time.deltaTime;
-        }
-        
-        //playerRb.linearVelocity = new Vector2(input * speed, playerRb.linearVelocity.y);
         
 
         if(Mathf.Abs(xInput) > 0 && ! speedPanel && ! waterdetect && SpeedPanelMomentumDEBUG == false) {

@@ -12,15 +12,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if(collision.transform.tag == "Player")
         {
-            playerMovement.KBCounter = playerMovement.KBTotalTime;
-            if(collision.transform.position.x <= transform.position.x)
-            {
-                playerMovement.KnockFromRight = true;
-            }
-            if(collision.transform.position.x > transform.position.x)
-            {
-                playerMovement.KnockFromRight = false;
-            }
+           
             playerHealth.TakeDamage(damage);
             //Debug.Log(collision.gameObject.name);
         }
