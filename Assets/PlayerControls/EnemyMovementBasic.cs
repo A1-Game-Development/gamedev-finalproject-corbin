@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovementBasic : MonoBehaviour
 {
     public Transform[] patrolPoints;
-    public int maxPatrolPoints;
     public float moveSpeed;
     public float verticalSpeed; //only used during isChasing.
     public int patrolDestination;
@@ -21,13 +20,25 @@ public class EnemyMovement : MonoBehaviour
     private float EvasionTimer;
     public float EvasionTime;
     public bool EvasionAbility; //Determines if 'isChasing' is permenantly enabled or not when isChasing gets triggered, setting to true will enable the ability to evade from enemy.
-    public bool Evading;
+    public bool evading;
 
-    // Update is called once per frame
 
-    void Update()
-    {
-        if(isChasing)
+
+void Start() {
+        isChasing = false;
+        waitingState = false;
+        evading = false;
+        DebugStartupCheck();
+        
+        //wallCollisionTimer = 3;
+    }
+
+void FixedUpdate() {
+ if(!waitingState && !isChasing && !evading) {
+        PatrolDirection();
+    }
+
+       if(isChasing)
         {
             if(transform.position.x > playerTransform.position.x)
             {
@@ -50,16 +61,16 @@ public class EnemyMovement : MonoBehaviour
             
             if(Vector2.Distance(transform.position, playerTransform.position) > EvasionDistance && EvasionAbility)
             {
-                Evading = true;
+                evading = true;
                 isChasing = false;
                 EvasionTimer = EvasionTime;
             }
             
         }
-        else if(Evading)
+        else if(evading)
         {
             EvasionTime -= Time.deltaTime;
-            Evading = (EvasionTime > 0.1f);
+            evading = (EvasionTime > 0.1f);
         }
 
         else
@@ -67,22 +78,11 @@ public class EnemyMovement : MonoBehaviour
             if(Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
             {
                 isChasing = true;
-                Evading = false;
+                evading = false;
             }
 
             
             PatrolLinear();
-            //if(patrolDestination == 1 && !waitingState)
-            //{
-            //   transform.position = Vector2.MoveTowards(transform.position, patrolPoints[1].position, moveSpeed * Time.deltaTime);
-            //   if(Vector2.Distance(transform.position, patrolPoints[1].position) < .2f)
-            //   {
-            //       transform.localScale = new Vector3(-1, 1, 1);
-            //       patrolDestination = 0;
-            //       waitingState = true;
-            //       chosenTime = Random.Range(WaitTimeMin, WaitTimeMax);
-            //   }
-            //}
 
             if(waitingState && WaitingAbility)
             {
@@ -92,6 +92,13 @@ public class EnemyMovement : MonoBehaviour
 
             }
         }
+}
+
+    // Update is called once per frame
+
+    void Update()
+    {
+ 
 
     }
 void PatrolLinear()
@@ -101,9 +108,9 @@ void PatrolLinear()
                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
                if(Vector2.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f)
                {
-                   //transform.localScale = new Vector3(1, 1, 1);
                    
-                   if(patrolDestination >= maxPatrolPoints)
+                   
+                   if(patrolDestination >= (patrolPoints.Length - 1))
                    {
                     patrolDestination = 0;
                     chosenTime = Random.Range(WaitTimeMin, WaitTimeMax);
@@ -125,28 +132,23 @@ void PatrolLinear()
                }
             }
 }
-
-// void PatrolRandom()
-// {
-//     if(!waitingState)
-//     {
-//         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
-//         if(Vector2.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f)
-//                {
-//                    //transform.localScale = new Vector3(1, 1, 1);
-                   
-//                    if(patrolDestination >= maxPatrolPoints)
-//                    {
-//                     patrolDestination = 0;
-//                     chosenTime = Random.Range(WaitTimeMin, WaitTimeMax);
-//                     if(WaitingAbility)
-//                     {
-//                         waitingState = true;
-//                     }
-
-                   
-//                }
-//     }
-// }
-//private
+void PatrolDirection()
+{
+    if(transform.position.x > patrolPoints[patrolDestination].position.x)
+    {
+        transform.localScale = new Vector3(1, 1, 1);
+    }
+    if(transform.position.x < patrolPoints[patrolDestination].position.x)
+    {
+        transform.localScale = new Vector3(-1, 1, 1);
+    }
+}
+void DebugStartupCheck() {
+    if(WaitTimeMin > WaitTimeMax) {
+        Debug.Log("WaitTimeMin is greater than WaitTimeMax! Unpredicable Behavior expected!"); }
+    if (chaseDistance > EvasionDistance) {
+        Debug.Log("chaseDistance is greater than EvasionDistance! You can ignore this if EvasionAbility is disabled."); }
+    if (moveSpeed <= 0 || chaseDistance <= 0) {
+        Debug.Log("Some vital values are left at 0!"); }
+}
 }
