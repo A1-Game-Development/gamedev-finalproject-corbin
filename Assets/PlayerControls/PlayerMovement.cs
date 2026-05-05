@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool m_FacingRight = true;
 
+    [SerializeField] private Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
     }
@@ -44,6 +46,18 @@ public class PlayerMovement : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
         //Make sure to change the settings. Select "Edit" > "Project Settings", select "Player", scroll down to "Other Settings", and find "Configuration", Locate "Active Input Handling" then make "Input System Package(new)" to "Both", and click "Apply"
+        if (xInput != 0){
+            animator.SetBool("isRunning", true);
+        }
+        else{
+            animator.SetBool("isRunning", false);
+        }
+        if (yInput != 0){
+            animator.SetBool("isJump", true);
+        }
+        else{
+            animator.SetBool("isJump", false);
+        }
     }
 
 

@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 0afc0701c1d01ae44b9fb9a77456d69d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2765597481628882709
+    second: SimonSalmon_Walkcycle1 (1)_0
+  - first:
+      213: 828863206030510947
+    second: SimonSalmon_Walkcycle1 (1)_1
+  - first:
+      213: -5051614394305002567
+    second: SimonSalmon_Walkcycle1 (1)_2
+  - first:
+      213: -3533647398263735905
+    second: SimonSalmon_Walkcycle1 (1)_3
+  - first:
+      213: 6611056675489904270
+    second: SimonSalmon_Walkcycle1 (1)_4
+  - first:
+      213: 8996252637321459569
+    second: SimonSalmon_Walkcycle1 (1)_5
+  - first:
+      213: 5017343842393786460
+    second: SimonSalmon_Walkcycle1 (1)_6
+  - first:
+      213: -5363482933199302966
+    second: SimonSalmon_Walkcycle1 (1)_7
+  - first:
+      213: 8783341287529063350
+    second: SimonSalmon_Walkcycle1 (1)_8
+  - first:
+      213: -7086075633277736546
+    second: SimonSalmon_Walkcycle1 (1)_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 433
+        width: 255
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8abc34ebf9e99d0800000000000000
+      internalID: -2765597481628882709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 440
+        width: 255
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b07d2c1b6b08b00800000000000000
+      internalID: 828863206030510947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 436
+        width: 251
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b34335197f05e9b0800000000000000
+      internalID: -5051614394305002567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 357
+        width: 243
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99b101d966f5fec0800000000000000
+      internalID: -3533647398263735905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_4
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 354
+        width: 245
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86fc8cf4013fbb50800000000000000
+      internalID: 6611056675489904270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_5
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 355
+        width: 233
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17777350c1c19dc70800000000000000
+      internalID: 8996252637321459569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 275
+        width: 224
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5800e144af21a540800000000000000
+      internalID: 5017343842393786460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_7
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 275
+        width: 249
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace09cf60b41195b0800000000000000
+      internalID: -5363482933199302966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_8
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 275
+        width: 254
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b321386d52b4e970800000000000000
+      internalID: 8783341287529063350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SimonSalmon_Walkcycle1 (1)_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 196
+        width: 244
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99ede251c339ad90800000000000000
+      internalID: -7086075633277736546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6aa4951914778f54093f89cb07a98540
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SimonSalmon_Walkcycle1 (1)_0: -2765597481628882709
+      SimonSalmon_Walkcycle1 (1)_1: 828863206030510947
+      SimonSalmon_Walkcycle1 (1)_2: -5051614394305002567
+      SimonSalmon_Walkcycle1 (1)_3: -3533647398263735905
+      SimonSalmon_Walkcycle1 (1)_4: 6611056675489904270
+      SimonSalmon_Walkcycle1 (1)_5: 8996252637321459569
+      SimonSalmon_Walkcycle1 (1)_6: 5017343842393786460
+      SimonSalmon_Walkcycle1 (1)_7: -5363482933199302966
+      SimonSalmon_Walkcycle1 (1)_8: 8783341287529063350
+      SimonSalmon_Walkcycle1 (1)_9: -7086075633277736546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
