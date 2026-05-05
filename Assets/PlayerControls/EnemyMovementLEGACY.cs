@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementBasic : MonoBehaviour
+public class EnemyMovementLEGACY : MonoBehaviour
 {
     public Transform[] patrolPoints;
     public float moveSpeed;

@@ -21,6 +21,7 @@ public class EnemyMovementAdvanced : MonoBehaviour
     private float chosenTime; //public for sake of debugging
     public float evasionDistance; //Distance before the enemy goes into Searching mode if EvasionAbility is enabled.
     public float EvasionTimer; //Starts at evasionTime's value, then counts down when outside of its Chase distance (if EvasionAbility is enabled). If it gets to 0, chase ends.
+    [Range (0.5f, 30f)]
     public float EvasionTime;
     public bool EvasionAbility; //Determines if 'isChasing' is permenantly enabled or not when isChasing gets triggered, setting to true will enable the ability to evade from enemy.
     public bool evading;
@@ -31,9 +32,10 @@ public class EnemyMovementAdvanced : MonoBehaviour
     public Rigidbody2D body;
     public BoxCollider2D wallCheck;
     public bool patrolMode2; //Random.
-    //[Range(0f, 3f)]
-    //public float wallCollisionTimer;
-    
+    [Range(0.1f, 40f)]
+    public float speedCapLimit;
+    public bool speedCapHit;
+
     void Start() {
         isChasing = false;
         waitingState = false;
@@ -54,12 +56,12 @@ public class EnemyMovementAdvanced : MonoBehaviour
 void FixedUpdate() {
     if(isChasing)
         {
-            if((transform.position.x + 0.2) > playerTransform.position.x)
+            if((transform.position.x + 0.2) > playerTransform.position.x && !speedCapHit)
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 body.AddForce(new Vector2((-1 * Time.deltaTime) * chaseSpeed, 0)); //I want to figure out a way to detect velocity so I can boost it or cap the speed.
             }
-            if((transform.position.x - 0.2) < playerTransform.position.x)
+            if((transform.position.x - 0.2) < playerTransform.position.x && !speedCapHit)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
                 body.AddForce(new Vector2((Time.deltaTime) * chaseSpeed, 0));
@@ -195,4 +197,16 @@ void DebugStartupCheck() {
     // }
 
 }
+
+    void SpeedCapCheck() //This sets speedCapHit to true if X velocity goes beyond a certain value. This is used by IsChasing to disable Addforce until velocity falls back down.
+    {
+        if (body.linearVelocityX > (speedCapLimit) || body.linearVelocityX < (speedCapLimit * -1))
+        {
+            speedCapHit = true;
+        }
+        else
+        {
+            speedCapHit = false;
+        }
+    }
 }
