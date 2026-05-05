@@ -850,6 +850,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1068006137 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3289735280501205639, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
+  m_PrefabInstance: {fileID: 7095217638694013357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1108437187
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +963,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc63ab2dc87b254c8a749d99302825d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!1 &1336305464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1094184589239558892, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
+  m_PrefabInstance: {fileID: 7095217638694013357}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579371713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612872371}
   m_Layer: 0
-  m_Name: PatrolPoint1
+  m_Name: PatrolPoint1A
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1272,84 +1282,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1904475804
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1904475805}
-  - component: {fileID: 1904475806}
-  m_Layer: 0
-  m_Name: WaterCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1904475805
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904475804}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.231, y: -0.16124, z: 0}
-  m_LocalScale: {x: 1.5646796, y: 0.1375, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7095217638694013358}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1904475806
+--- !u!61 &1904475806 stripped
 BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6047109458254669081, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
+  m_PrefabInstance: {fileID: 7095217638694013357}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904475804}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.41071653}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.81006217}
-  m_EdgeRadius: 0
 --- !u!1 &2023117906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,7 +1435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7841356933032460070, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: wallCheck
@@ -1507,6 +1444,10 @@ PrefabInstance:
     - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: chaseSpeed
       value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
+      propertyPath: EvasionTime
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: WaitTimeMax
@@ -1523,6 +1464,10 @@ PrefabInstance:
     - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: patrolMode2
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
+      propertyPath: speedCapLimit
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8417063684966187242, guid: e9ec6b9a6bc257546ab4b49d7d082644, type: 3}
       propertyPath: playerTransform
@@ -1695,6 +1640,10 @@ PrefabInstance:
       value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 8459107700685609132, guid: a5096b06418755b47bab40b1c4b7e559, type: 3}
+      propertyPath: speedCapLimit
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459107700685609132, guid: a5096b06418755b47bab40b1c4b7e559, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1207938546}
@@ -1739,93 +1688,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishAqua1
       objectReference: {fileID: 0}
-    - target: {fileID: 6769885918948401136, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
+    - target: {fileID: 4385716245482011651, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
       propertyPath: m_Name
-      value: GroundCheckExperimental1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: body
-      value: 
-      objectReference: {fileID: 7095217638694013361}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: alive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: wallCheck
-      value: 
-      objectReference: {fileID: 1718646884}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: chaseSpeed
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: waterCheck
-      value: 
-      objectReference: {fileID: 1904475806}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: EvasionTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1718646884}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: airBreathTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: chaseDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: EvasionAbility
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1207938546}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: waterMask.m_Bits
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: groundMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: verticalChaseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: 'patrolPoints.Array.data[0]'
-      value: 
-      objectReference: {fileID: 942668901}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: 'patrolPoints.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1831837214}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: 'patrolPoints.Array.data[2]'
-      value: 
-      objectReference: {fileID: 998578127}
-    - target: {fileID: 7949224508643088613, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: driedUpChaseSpeedPenaltySetting
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764192329238405067, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      propertyPath: m_Name
-      value: Wall Check1
+      value: WaterCheck1
       objectReference: {fileID: 0}
     - target: {fileID: 9051281053990847563, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1869,22 +1734,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9051281053990847563, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1904475805}
-    m_AddedComponents: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1094184589239558892, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7095217638694013364}
   m_SourcePrefab: {fileID: 100100000, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
---- !u!4 &7095217638694013358 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9051281053990847563, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
-  m_PrefabInstance: {fileID: 7095217638694013357}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &7095217638694013361 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 6290480748435087475, guid: 11c2d054f75924f459d3f18dee104cc0, type: 3}
   m_PrefabInstance: {fileID: 7095217638694013357}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7095217638694013364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336305464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b7f820ad8699946881244c5c9458cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterEnemyMovementExperimental
+  patrolPoints:
+  - {fileID: 942668901}
+  - {fileID: 1831837214}
+  - {fileID: 998578127}
+  moveSpeed: 5
+  chaseSpeed: 600
+  verticalChaseSpeed: 5
+  patrolDestination: 0
+  playerTransform: {fileID: 1207938546}
+  isChasing: 0
+  chaseDistance: 5
+  waitingAbility: 1
+  waitTimeMin: 1.04
+  waitTimeMax: 2.2
+  chosenTime: 0
+  evasionDistance: 20
+  EvasionTimer: 0
+  EvasionTime: 5
+  EvasionAbility: 1
+  evading: 0
+  watered: 0
+  groundCheck: {fileID: 1718646884}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  body: {fileID: 7095217638694013361}
+  wallCheck: {fileID: 1068006137}
+  waterMask:
+    serializedVersion: 2
+    m_Bits: 16
+  waterCheck: {fileID: 1904475806}
+  patrolMode2: 0
+  canBreatheAir: 1
+  canDryUp: 0
+  airBreathTime: 40
+  airBreathTimer: 0
+  dryUpTime: 5
+  dryUpTimer: 0
+  driedAccelPenaltySetting: 50
+  driedAccelPenalty: 0
+  alive: 1
+  speedCapLimit: 8
+  speedCapHit: 0
+  debugDISTANCE: 0
 --- !u!1001 &8657695839679958832
 PrefabInstance:
   m_ObjectHideFlags: 0
