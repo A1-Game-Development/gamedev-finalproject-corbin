@@ -625,8 +625,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207938544}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 10.89, y: -2.374, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: 0.000000034458935, w: 0}
+  m_LocalPosition: {x: 10.89, y: -2.34, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -724,6 +724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   firePoint: {fileID: 272199449}
   bulletPrefab: {fileID: 4814008270227417076, guid: 25ed4f63305dd7347940fe9f90c150ab, type: 3}
+  bulletSpeed: 0
 --- !u!212 &1207938551
 SpriteRenderer:
   serializedVersion: 2
@@ -1298,13 +1299,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771169485}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37, y: -2.26, z: 0}
+  m_LocalRotation: {x: -0, y: 0.004351485, z: -0, w: 0.9999905}
+  m_LocalPosition: {x: 6.02, y: -2.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.499, z: 0}
 --- !u!1 &1875518941
 GameObject:
   m_ObjectHideFlags: 0

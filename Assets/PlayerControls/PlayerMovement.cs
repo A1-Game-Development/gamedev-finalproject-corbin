@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isJump", true);
         }
         else{
-            animator.SetBool("isJump", false);
+           animator.SetBool("isJump", false);
         }
     }
 
