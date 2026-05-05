@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //Im gonna see if I can implement jumping or not for enemies.
-public class WaterEnemyMovement : MonoBehaviour
+public class WaterEnemyMovementOUTDATED : MonoBehaviour
 {
     public Transform[] patrolPoints;
     public float moveSpeed;
@@ -18,11 +18,9 @@ public class WaterEnemyMovement : MonoBehaviour
     public float waitTimeMin; //Since waittime is randomized, these determine the minimun and maxinum possible amount of seconds.
     [Range(0f, 8f)]
     public float waitTimeMax; //same purpose as waitTimeMin, except for maxinum value instead.
-    public float chosenTime; //public for sake of debugging
-    [Range(10f, 50f)]
+    private float chosenTime; //public for sake of debugging
     public float evasionDistance; //Distance before the enemy goes into Searching mode if EvasionAbility is enabled.
     public float EvasionTimer; //Starts at evasionTime's value, then counts down when outside of its Chase distance (if EvasionAbility is enabled). If it gets to 0, chase ends.
-    [Range(1f, 30f)]
     public float EvasionTime;
     public bool EvasionAbility; //Determines if 'isChasing' is permenantly enabled or not when isChasing gets triggered, setting to true will enable the ability to evade from enemy.
     public bool evading;
@@ -38,20 +36,17 @@ public class WaterEnemyMovement : MonoBehaviour
     public bool patrolMode2; //Random.
     public bool canBreatheAir; //Determines whether this fish can survive out of water or not.
     public bool canDryUp; //Determines whether this fish can dry up or not.
-    [Range(1f, 40f)]
+    [Range(0f, 40f)]
     public float airBreathTime;
     public float airBreathTimer; //The actual counter that counts down. Public for sake of debugging.
-    [Range(1f, 30f)]
+    [Range(0f, 30f)]
     public float dryUpTime;
     public float dryUpTimer; //the actual counter that counts down. Public for sake of debugging.
-    [Range(50f, 300f)]
-    public float driedAccelPenaltySetting;
-    public float driedAccelPenalty; //public for sake of debugging.
+    public float driedUpChaseSpeedPenaltySetting;
+    public float driedUpChaseSpeedPenalty; //public for sake of debugging.
     public bool alive;
-    [Range(0.1f, 40f)]
-    public float speedCapLimit;
-    public bool speedCapHit;
-    public float debugDISTANCE; //disable before compiling game
+    //[Range(0f, 3f)]
+    //public float wallCollisionTimer;
     
     void Start() {
         alive = true;
@@ -60,7 +55,7 @@ public class WaterEnemyMovement : MonoBehaviour
         evading = false;
         airBreathTimer = airBreathTime;
         dryUpTimer = dryUpTime;
-        driedAccelPenalty = 0;
+        driedUpChaseSpeedPenalty = 0;
         DebugStartupCheck();
         
         //wallCollisionTimer = 3;
@@ -77,21 +72,21 @@ public class WaterEnemyMovement : MonoBehaviour
 void FixedUpdate() {
     if(isChasing && alive)
         {
-            if((transform.position.x + 0.2) > playerTransform.position.x && !speedCapHit)
+            if((transform.position.x + 0.2) > playerTransform.position.x)
             {
                 transform.localScale = new Vector3(1, 1, 1);
-                body.AddForce(new Vector2((-1 * Time.deltaTime) * chaseSpeed, 0));
+                body.AddForce(new Vector2((-1 * Time.deltaTime) * chaseSpeed, 0)); //I want to figure out a way to detect velocity so I can boost it or cap the speed.
             }
-            if((transform.position.x - 0.2) < playerTransform.position.x && !speedCapHit)
+            if((transform.position.x - 0.2) < playerTransform.position.x)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
-                body.AddForce(new Vector2((Time.deltaTime) * chaseSpeed - driedAccelPenalty, 0));
+                body.AddForce(new Vector2((Time.deltaTime) * chaseSpeed - driedUpChaseSpeedPenalty, 0));
             }
             // if (transform.position.y > playerTransform.position.y)
             // {
             //     transform.position += Vector3.down * verticalChaseSpeed * Time.deltaTime;
             // }
-            if ((transform.position.y + 2) < playerTransform.position.y && grounded || (transform.position.y + 2) < playerTransform.position.y && watered)
+            if ((transform.position.y + 2) < playerTransform.position.y && grounded)
             {
                 //yInput = 1;
                 body.linearVelocity = new Vector2(body.linearVelocity.x, 1 * verticalChaseSpeed);
@@ -124,10 +119,6 @@ void FixedUpdate() {
             if(patrolMode2) {
                 PatrolRandom();
             }
-            else if(watered)
-            {
-                PatrolLinearWater();
-            }
             else {
                 PatrolLinear();
             }
@@ -145,10 +136,7 @@ void FixedUpdate() {
                 chosenTime -= Time.deltaTime;
                 waitingState = (chosenTime > 0.1f);
                 //Debug.Log(chosenTime);   
-                if(watered)
-                {
-                    body.linearVelocityY = 0;
-                }
+
             }
         }
     CheckGroundWallAndWater();
@@ -158,12 +146,8 @@ void FixedUpdate() {
     if(canDryUp) {
         DryUp(); 
     }
-    WaterGravity();
-    SpeedCapCheck();
-    debugDISTANCE = Vector2.Distance(transform.position, playerTransform.position); //disable before compiling game
-
-
-    }
+    
+}
 
 
 
@@ -193,46 +177,8 @@ void PatrolLinear()
 
             }
 }
-    
-    void PatrolLinearWater() //This is gonna be really messy but I don't know a better way to get vertical movement for the enemy working underwater.
-    {
-        if (!waitingState)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
-            if (Vector3.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f)
-            {
-                if (patrolDestination >= (patrolPoints.Length - 1))
-                {
-                    patrolDestination = 0;
-                    chosenTime = Random.Range(waitTimeMin, waitTimeMax);
-                    if (waitingAbility)
-                    {
-                        waitingState = true;
-                    }
-                }
-                else
-                {
-                    patrolDestination += 1;
-                    if (waitingAbility)
-                    {
-                        waitingState = true;
-                    }
-                    chosenTime = Random.Range(waitTimeMin, waitTimeMax);
-                }
-            }
-            if((transform.position.x - 0) < patrolPoints[patrolDestination].position.x)
-            {
-                body.AddForce(new Vector2(0, (Time.deltaTime) * 0.8f * chaseSpeed));
-            }
-            if ((transform.position.x - 0) > patrolPoints[patrolDestination].position.x)
-            {
-                body.AddForce(new Vector2(0, (Time.deltaTime) * 0.8f * chaseSpeed));
-            }
 
-        }
-    }
-
-    void PatrolRandom() {
+void PatrolRandom() {
     if(!waitingState) {
         transform.position = Vector3.MoveTowards(transform.position, patrolPoints[patrolDestination].position, moveSpeed * Time.deltaTime);
         if(Vector3.Distance(transform.position, patrolPoints[patrolDestination].position) < .2f) {
@@ -284,9 +230,9 @@ void AirSuffocate() {
     if(watered && (airBreathTimer > 0.1f)) {
         airBreathTimer = airBreathTime;
         dryUpTimer = dryUpTime;
-        driedAccelPenalty = 0;
+        driedUpChaseSpeedPenalty = 0;
     }
-    if(airBreathTimer < 0.1f) {
+    else if(airBreathTimer > 0.1f) {
         alive = false;
     }
 }
@@ -296,35 +242,13 @@ void DryUp() {
     }
     if(watered) {
         dryUpTimer = dryUpTime;
-        driedAccelPenalty = 0;
+        driedUpChaseSpeedPenalty = 0;
     }
     if(dryUpTimer <= 0.1f) {
-        driedAccelPenalty = driedAccelPenaltySetting;
+        driedUpChaseSpeedPenalty = driedUpChaseSpeedPenaltySetting;
     }
 }
+    
 
-void WaterGravity()
-    {
-        if (watered)
-        {
-            body.gravityScale = 0.5f;
-        }
-        else
-        {
-            body.gravityScale = 1f;
-        }
-            
-
-    }
-    void SpeedCapCheck() //This sets speedCapHit to true if X velocity goes beyond a certain value. This is used by IsChasing to disable Addforce until velocity falls back down.
-    {
-        if (body.linearVelocityX > (speedCapLimit) || body.linearVelocityX < (speedCapLimit * -1))
-        {
-            speedCapHit = true;
-        }
-        else
-        {
-            speedCapHit = false;
-        }
-    }
 } 
+
