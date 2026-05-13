@@ -7,14 +7,35 @@ public class Weapon : MonoBehaviour
    public Transform firePoint;
    public GameObject bulletPrefab;
    public float bulletSpeed;
+   [Range(0.5f, 5f)]
+   public float cooldownTime;
+   private bool cooldownActive;
+   private float cooldownTimer;
 
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if(cooldownActive && (cooldownTimer > 0f)) {
+            cooldownTimer -= Time.deltaTime;
+        }
+        if(cooldownTimer <= 0f) {
+            cooldownActive = false;
+            cooldownTimer = cooldownTime;
+        }
+        
+    }
+    // Update is called once per frame
+    void Update() {
+        if (Input.GetButtonDown("Fire1") && !cooldownActive)
         {
             Shoot();
         }
+    }
+
+
+
+    void Start() {
+        cooldownTimer = cooldownTime;
     }
 
     void Shoot()
@@ -24,5 +45,15 @@ public class Weapon : MonoBehaviour
         GameObject newProjectile = Instantiate(bulletPrefab, firePoint.position, this.transform.rotation);
         Rigidbody2D firing = newProjectile.GetComponent<Rigidbody2D>();
         firing.AddForce((firePoint.position - this.transform.position) * bulletSpeed, ForceMode2D.Impulse);
+        cooldownActive = true;
     }
+
+//DEBUG SEGMENT -- DISABLE IF COMPILING FOR FINAL.
+public float GetcooldownTimer() {
+    return cooldownTimer;
+}
+public bool GetcooldownActive() {
+    return cooldownActive;
+}
+
 }
