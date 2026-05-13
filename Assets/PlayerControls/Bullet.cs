@@ -10,21 +10,23 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float despawnTime;
     private float despawnTimer;
-    //private bool hit; //Done because of the gameObject not destorying its self fast enough.
+    //private bool hit; //Done to prevent hitting multiple times.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
         despawnTimer = despawnTime;
+        //hit = false;
     }
 
-    void OnTriggerEnter2D (Collider2D hitInfo)
+    void OnTriggerEnter2D (Collider2D hitInfo)  
     {
         EnemyDamage enemy = hitInfo.GetComponent<EnemyDamage>();
         Debug.Log("a");
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
             Debug.Log("aa");
+            enemy.TakeDamage(damage);
+            
         }
         Destroy(gameObject);
     }
