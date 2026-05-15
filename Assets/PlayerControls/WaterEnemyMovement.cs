@@ -164,9 +164,6 @@ void FixedUpdate() {
     }
     WaterGravity();
     SpeedCapCheck();
-    if(hit && aggroWhenHit) {
-        isChasing = true;
-    }
     //DEBUG SEGMENT -- COMMENT OUT BEFORE COMPILING
     debugDISTANCE = (Vector2.Distance(transform.position, playerTransform.position) - chaseDistance);
 
@@ -315,7 +312,7 @@ void DryUp() {
     {
         if (watered)
         {
-            body.gravityScale = 0.5f;
+            body.gravityScale = 0.2f;
         }
         else
         {
