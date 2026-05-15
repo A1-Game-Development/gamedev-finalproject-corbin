@@ -51,11 +51,13 @@ public class WaterEnemyMovement : MonoBehaviour
     [Range(0.1f, 40f)]
     public float speedCapLimit;
     private bool speedCapHit;
+    public bool aggroWhenHit;
+    public bool hit;
     public float debugDISTANCE; //disable before compiling game
-    public int debugDirection;
     
     void Start() {
         alive = true;
+        hit = false;
         isChasing = false;
         waitingState = false;
         evading = false;
@@ -82,13 +84,11 @@ void FixedUpdate() {
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 body.AddForce(new Vector2((-1 * Time.deltaTime) * (chaseSpeed - driedAccelPenalty), 0));
-                debugDirection = 1;
             }
             if((transform.position.x - 0.2) < playerTransform.position.x && !speedCapHit)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
                 body.AddForce(new Vector2((1 * Time.deltaTime) * (chaseSpeed - driedAccelPenalty), 0));
-                debugDirection = 2;
                 //Debug.Log(Time.deltaTime);
             }
             // if (transform.position.y > playerTransform.position.y)
@@ -312,7 +312,7 @@ void DryUp() {
     {
         if (watered)
         {
-            body.gravityScale = 0.5f;
+            body.gravityScale = 0.2f;
         }
         else
         {

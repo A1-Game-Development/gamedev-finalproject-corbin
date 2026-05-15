@@ -39,8 +39,7 @@ public class EnemyWaterDebugText : MonoBehaviour
             "\nX Velocity: " + WaterEnemyMovement.body.linearVelocityX.ToString("F2") + "  speedcaphit: " + WaterEnemyMovement.GetspeedCapHit() +
             "\n" +
             "\ncanBreatheAir: " + WaterEnemyMovement.canBreatheAir + "   canDryUp: " + WaterEnemyMovement.canDryUp +
-            "\ndryUpTime: " + WaterEnemyMovement.dryUpTimer.ToString("F2") + " / " + WaterEnemyMovement.dryUpTime +
-            "nDebugDirection" + WaterEnemyMovement.debugDirection;
+            "\ndryUpTime: " + WaterEnemyMovement.dryUpTimer.ToString("F2") + " / " + WaterEnemyMovement.dryUpTime;
         chosenTimeText.text = dispTxt;
         
     }
